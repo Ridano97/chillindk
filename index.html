@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chill'in — Café • Brunch</title>
+
+  <!-- Fonts (logo + sous-titre) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="logoLockup" aria-label="Chill'in Café - Brunch">
+      <div class="logoScript">Chill’in</div>
+      <div class="logoSub">BRUNCH • SUCRÉ SALÉ </div>
+    </div>
+
+    <!-- Remplace par ton lien d'avis Google direct -->
+    <a class="googleBtn" href="https://www.google.com/search?q=chillin+avis" target="_blank" rel="noopener">
+      ⭐ Avis Google
+    </a>
+  </header>
+
+  <!-- HOME -->
+  <main class="home" id="home">
+    <section class="heroCard">
+      <p class="table" id="table-number"></p>
+
+      <h1 class="homeTitle">Menu</h1>
+      <p class="muted">
+        Viens chiller, on s'occupe du reste. <br>
+      </p>
+
+      <div class="chips">
+        <button class="chip active" data-open="formules">Formules Brunch</button>
+        <button class="chip" data-open="brunch">Brunch & Lunch</button>
+        <button class="chip" data-open="burgers">Burgers</button>
+        <button class="chip" data-open="pancakes">Pancakes</button>
+        <button class="chip" data-open="painperdu">Pain perdu</button>
+        <button class="chip" data-open="crepes">Crêpes & Gaufres</button>
+        <button class="chip" data-open="boissons">Boissons</button>
+      </div>
+
+      <div class="quick">
+       <a class="quick__btn" href="https://instagram.com/chillin_dk" target="_blank" rel="noopener">
+  <span class="ico" aria-hidden="true">
+    <svg viewBox="0 0 24 24" class="icoSvg">
+      <path d="M7.5 2.75h9A4.75 4.75 0 0 1 21.25 7.5v9A4.75 4.75 0 0 1 16.5 21.25h-9A4.75 4.75 0 0 1 2.75 16.5v-9A4.75 4.75 0 0 1 7.5 2.75Z"
+        stroke="currentColor" stroke-width="1.6" fill="none"/>
+      <circle cx="12" cy="12" r="4.25" stroke="currentColor" stroke-width="1.6" fill="none"/>
+      <circle cx="17.2" cy="6.8" r="0.8" fill="currentColor"/>
+    </svg>
+  </span>
+  <span>Instagram</span>
+</a>
+
+
+        <a class="quick__btn" href="tel:+33000000000">📞 Appeler</a>
+        <a class="quick__btn" href="https://maps.google.com/?q=chillin" target="_blank" rel="noopener">📍 14 rue Thiers, Dunkerque</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- OVERLAY / DRAWER -->
+  <div class="overlay" id="overlay" aria-hidden="true">
+    <div class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+      <div class="drawer__top">
+        <button class="backBtn" id="closeDrawer" aria-label="Fermer">✕</button>
+
+        <div class="drawer__head">
+          <div class="drawer__small">Menu</div>
+          <h2 class="drawer__title" id="drawerTitle">Titre</h2>
+        </div>
+
+        <div class="spacer"></div>
+      </div>
+
+      <div class="drawer__body" id="drawerBody">
+
+        <!-- FORMULES BRUNCH -->
+        <section class="menuSection" data-section="formules">
+          <div class="sectionHeader">
+            <h3>Formules Brunch</h3>
+            <p class="muted">À savourer sur place.</p>
+          </div>
+
+          <div class="menuList">
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Arabic</div><div class="menuItem__price">11,90 €</div></div>
+              <p class="menuItem__desc">Thé à la menthe ou café, msemen (crêpe marocaine), œuf, fromage, olives, charcuterie, huile d’olive, harissa, et jus d’orange fraîchement pressé.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">French Morning</div><div class="menuItem__price">8,00 €</div></div>
+              <p class="menuItem__desc">Tartine (confiture, Nutella ou beurre), croissant, fromage, chocolat chaud, café ou thé.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">English Classic</div><div class="menuItem__price">11,50 €</div></div>
+              <p class="menuItem__desc">Boisson chaude, œufs brouillés, bacon, saucisse, haricots blancs à la tomate et toast.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Turkish Touch</div><div class="menuItem__price">10,90 €</div></div>
+              <p class="menuItem__desc">Yaourt turc à l’ail et au persil, œuf au plat, sauce rouge légèrement relevée.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">American Dream</div><div class="menuItem__price">12,50 €</div></div>
+              <p class="menuItem__desc">Café ou cappuccino et jus d’orange, pancakes ou gaufre, sirop d’érable, œufs brouillés, charcuterie.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Nordic Fresh</div><div class="menuItem__price">13,90 €</div></div>
+              <p class="menuItem__desc">Gaufre, saumon fumé, avocat ou fromage frais, ciboulette, œuf.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Healthy</div><div class="menuItem__price">11,90 €</div></div>
+              <p class="menuItem__desc">Tartine pain complet toasté (avocat ou fromage frais), au choix : thon, blanc de poulet ou saumon. Yaourt ou fromage blanc avec graines de chia, miel, granola et fruits.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Chill’in Brunch</div><div class="menuItem__price">16,90 €</div></div>
+              <p class="menuItem__desc">Grand plateau : fruits frais & secs, fromage frais, œuf dur et œuf au plat, tartines complètes, avocat, fromage tranché, salade, charcuterie de poulet (ou autre), boisson fraîche ou smoothie.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- BRUNCH & LUNCH -->
+        <section class="menuSection" data-section="brunch">
+          <div class="sectionHeader">
+            <h3>Brunch & Lunch</h3>
+          </div>
+
+          <div class="mediaGrid">
+            <figure class="media">
+              <img src="crepes.jpeg" loading="lazy" alt="Brunch & Lunch" />
+            </figure>
+          </div>
+
+          <div class="menuList">
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Pain Muffin Bénédicte</div><div class="menuItem__price">10,50 €</div></div>
+              <p class="menuItem__desc">Pain muffin, avocat, œuf poché, bacon ou saumon, sauce bénédicte.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Croissant Bénédicte</div><div class="menuItem__price">10,50 €</div></div>
+              <p class="menuItem__desc">Croissant garni de jambon, avocat, œuf poché et sauce bénédicte.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Muffin Cheddar & Bacon</div><div class="menuItem__price">4,70 €</div></div>
+              <p class="menuItem__desc">Pain muffin, cheddar fondu, œuf, bacon.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Le Croissant Salé</div><div class="menuItem__price">9,50 €</div></div>
+              <p class="menuItem__desc">Philadelphia, avocat, œufs brouillés, lardons.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Toast Chèvre Miel</div><div class="menuItem__price">9,50 €</div></div>
+              <p class="menuItem__desc">Pain toasté au chèvre chaud, noix, miel, lardons, salade et vinaigre balsamique.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Pancake Fusion</div><div class="menuItem__price">15,00 €</div></div>
+              <p class="menuItem__desc">Boursin, guacamole, saumon, œuf, sauce lait de coco & curcuma, boisson au choix.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Le Croque Brunch — Monsieur</div><div class="menuItem__price">6,00 €</div></div>
+              <p class="menuItem__desc">Jambon, gruyère, béchamel.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Le Croque Brunch — Madame</div><div class="menuItem__price">7,00 €</div></div>
+              <p class="menuItem__desc">Jambon gruyère, béchamel et œuf au plat.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Chicken Waffle</div><div class="menuItem__price">8,20 €</div></div>
+              <p class="menuItem__desc">Gaufre salée, chou, escalope de poulet panée, œuf poché, sauce miel-moutarde maison et roquette.</p>
+            </article>
+
+            <p class="note">Supplément sauce maison : 0,80 €</p>
+          </div>
+        </section>
+
+        <!-- BURGERS -->
+        <section class="menuSection" data-section="burgers">
+          <div class="sectionHeader">
+            <h3>Burgers</h3>
+          </div>
+
+          <div class="mediaGrid">
+            <figure class="media">
+              <img src="burgers.jpeg" loading="lazy" alt="Burgers" />
+            </figure>
+          </div>
+
+          <div class="menuList">
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Burger Beef</div><div class="menuItem__price">7,50 €</div></div>
+              <p class="menuItem__desc">Pain burger, steak, cheddar, sauce maison.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Le Double</div><div class="menuItem__price">8,00 €</div></div>
+              <p class="menuItem__desc">Double steak haché, cheddar, sauce maison.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Le Country</div><div class="menuItem__price">8,50 €</div></div>
+              <p class="menuItem__desc">Pain burger, double steak, cheddar, bacon, œuf, sauce maison.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Le Chicken</div><div class="menuItem__price">8,00 €</div></div>
+              <p class="menuItem__desc">Pain burger, poulet frit, salade, tomate, oignon, sauce au poivre, cheddar.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Sweet Burger</div><div class="menuItem__price">10,50 €</div></div>
+              <p class="menuItem__desc">Gaufre de patate douce, sauce maison, steak smashé, cheddar, oignon caramélisé, salade, tomate.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Double Brioche</div><div class="menuItem__price">8,00 €</div></div>
+              <p class="menuItem__desc">Pain brioché, double steak smashé, cheddar, sauce maison, salade, tomate, oignon.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Chick’n Brioche</div><div class="menuItem__price">8,00 €</div></div>
+              <p class="menuItem__desc">Pain brioché, chicken mariné au curry, cheddar, sauce maison, salade, tomate, oignon.</p>
+            </article>
+
+            <p class="note">Supplément frites : 2,50 € • Supplément frites patate douce : 3,50 € (avec soft)</p>
+          </div>
+        </section>
+
+        <!-- PANCAKES -->
+        <section class="menuSection" data-section="pancakes">
+          <div class="sectionHeader">
+            <h3>Pancakes</h3>
+          </div>
+
+          <div class="mediaGrid">
+            <figure class="media">
+              <img src="pancakescaramel.jpeg" loading="lazy" alt="Pancakes" />
+            </figure>
+          </div>
+
+          <div class="menuList">
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Pistache Signature</div><div class="menuItem__price">7,50 €</div></div>
+              <p class="menuItem__desc">Crème pistache, éclats de pistache, coulis de framboise.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Rouge Velours</div><div class="menuItem__price">6,50 €</div></div>
+              <p class="menuItem__desc">Coulis de fruits rouges, fruits frais, chantilly.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Choco Noisette</div><div class="menuItem__price">7,00 €</div></div>
+              <p class="menuItem__desc">Chocolat au lait maison avec éclats de noisette.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Chocolat Blanc</div><div class="menuItem__price">7,00 €</div></div>
+              <p class="menuItem__desc">Chocolat blanc maison avec éclats de noisette et chantilly.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Caramel Beurre Salé et Noix</div><div class="menuItem__price">7,00 €</div></div>
+              <p class="menuItem__desc">Caramel maison, noix et chantilly.</p>
+            </article>
+
+            <div class="divider"></div>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Mini pancakes</div><div class="menuItem__price">—</div></div>
+              <p class="menuItem__desc">Photo : mini pancakes (selon dispo du jour).</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- PAIN PERDU -->
+        <section class="menuSection" data-section="painperdu">
+          <div class="sectionHeader">
+            <h3>Pain perdu</h3>
+          </div>
+
+          <div class="mediaGrid">
+            <figure class="media">
+              <img src="painperdu.jpeg" loading="lazy" alt="Pain perdu" />
+            </figure>
+          </div>
+
+          <div class="menuList">
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Pistache</div><div class="menuItem__price">6,00 €</div></div>
+              <p class="menuItem__desc">Coulis de pistache, éclats de pistache, boule de glace.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Framboise</div><div class="menuItem__price">6,00 €</div></div>
+              <p class="menuItem__desc">Coulis de framboise, framboises, boule de glace.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Caramel Beurre Salé</div><div class="menuItem__price">6,00 €</div></div>
+              <p class="menuItem__desc">Caramel beurre salé, boule de glace.</p>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Choco-noisette</div><div class="menuItem__price">6,00 €</div></div>
+              <p class="menuItem__desc">Chocolat au lait maison avec éclats de noisette, chantilly et boule de glace.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- CREPES & GAUFRES -->
+        <section class="menuSection" data-section="crepes">
+          <div class="sectionHeader">
+            <h3>Crêpes & gaufres à composer</h3>
+          </div>
+
+          <div class="mediaGrid mediaGrid--two">
+            <figure class="media"><img src="crepes.jpeg" loading="lazy" alt="Crêpes" /></figure>
+            <figure class="media"><img src="gaufres.jpeg" loading="lazy" alt="Gaufres" /></figure>
+          </div>
+
+          <div class="menuList">
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Base crêpe</div><div class="menuItem__price">3,50 €</div></div>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Base gaufre</div><div class="menuItem__price">4,00 €</div></div>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row">
+                <div class="menuItem__name">Supplément (chocolat maison / Nutella / confiture / coulis fruits rouges / crème pistache / caramel beurre salé)</div>
+                <div class="menuItem__price">0,80 €</div>
+              </div>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Fruits frais</div><div class="menuItem__price">1,20 €</div></div>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Chantilly</div><div class="menuItem__price">0,50 €</div></div>
+            </article>
+
+            <article class="menuItem">
+              <div class="menuItem__row"><div class="menuItem__name">Glace</div><div class="menuItem__price">1,00 €</div></div>
+            </article>
+
+            <p class="note">Gâteaux du jour : prix affiché au comptoir.</p>
+          </div>
+        </section>
+
+        <!-- BOISSONS -->
+        <section class="menuSection" data-section="boissons">
+          <div class="sectionHeader">
+            <h3>Boissons</h3>
+          </div>
+
+          <div class="menuList">
+            <article class="menuItem isTight"><div class="menuItem__row"><div class="menuItem__name">Expresso</div><div class="menuItem__price">1,80 €</div></div></article>
+            <article class="menuItem isTight"><div class="menuItem__row"><div class="menuItem__name">Café au lait</div><div class="menuItem__price">4,00 €</div></div></article>
+            <article class="menuItem isTight"><div class="menuItem__row"><div class="menuItem__name">Cappuccino</div><div class="menuItem__price">4,50 €</div></div></article>
+            <article class="menuItem isTight"><div class="menuItem__row"><div class="menuItem__name">Latte macchiato</div><div class="menuItem__price">4,60 €</div></div></article>
+            <article class="menuItem isTight"><div class="menuItem__row"><div class="menuItem__name">Chocolat chaud</div><div class="menuItem__price">3,50 €</div></div></article>
+            <article class="menuItem isTight"><div class="menuItem__row"><div class="menuItem__name">Chocolat viennois</div><div class="menuItem__price">4,00 €</div></div></article>
+
+            <div class="divider"></div>
+
+            <article class="menuItem isTight"><div class="menuItem__row"><div class="menuItem__name">Milkshake</div><div class="menuItem__price">5,00 €</div></div></article>
+            <article class="menuItem isTight"><div class="menuItem__row"><div class="menuItem__name">Jus d’orange pressé</div><div class="menuItem__price">3,00 €</div></div></article>
+            <article class="menuItem isTight"><div class="menuItem__row"><div class="menuItem__name">Smoothie du jour</div><div class="menuItem__price">6,00 €</div></div></article>
+            <article class="menuItem isTight"><div class="menuItem__row"><div class="menuItem__name">Thé à la menthe</div><div class="menuItem__price">2,50 €</div></div></article>
+            <article class="menuItem isTight"><div class="menuItem__row"><div class="menuItem__name">Théière à la menthe</div><div class="menuItem__price">4,00 €</div></div></article>
+
+            <p class="note">Supplément arôme : vanille, noisette, caramel — 0,50 €</p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
