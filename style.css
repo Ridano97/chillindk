@@ -109,12 +109,14 @@ img{
   font-size:28px;
   margin-bottom:6px;
   letter-spacing:.2px;
+  text-align: center;
 }
 
 .muted{
   color:var(--muted);
   font-size:14px;
   line-height:1.4;
+  text-align: center;
 }
 
 .tinyNote{
@@ -232,6 +234,7 @@ img{
   backdrop-filter: blur(6px);
   display:none;
   z-index:50;
+  padding: 12px;
 }
 
 .overlay.isOpen{ display:block; }
@@ -239,14 +242,14 @@ img{
 .drawer{
   position:absolute;
   left:50%;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 14px); /* ✅ espace bas + safe area iPhone */
   transform: translateX(-50%);
-  bottom:0;
-  width: min(820px, 92vw);        /* ✅ centré + pas full largeur */
-  max-height: 88vh;
+  width:min(820px,92vw);
+  max-height: calc(88vh - 14px); /* ✅ évite de déborder quand on remonte */
   background: linear-gradient(180deg, rgba(26,15,10,.98), rgba(18,11,8,.98));
   border:1px solid var(--line);
-  border-radius: 22px 22px 0 0;
-  box-shadow: var(--shadow);
+  border-radius: 22px;          /* ✅ arrondi partout (plus premium) */
+  box-shadow:var(--shadow);
   overflow:hidden;
   animation: rise .45s cubic-bezier(.22,1,.36,1) both;
 }
