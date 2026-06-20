@@ -147,7 +147,7 @@ body { margin: 0; background: #0e0c0b; color: #f2eadf; font-family: var(--font-s
   .reservation-card { flex-direction: row; align-items: center; justify-content: space-between; padding: 2rem 2.5rem; }
 }
 @media (min-width: 1024px) {
-  html { font-size: 14px; }
+  body { zoom: .78; }
   .section-dark { padding: 9rem 2rem 2rem; }
   .experience-card { grid-template-columns: 1fr 1.25fr; }
   .video-panel { min-height: 510px; }

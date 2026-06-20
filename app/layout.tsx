@@ -4,7 +4,7 @@ import "./globals.css";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { ScrollToTop } from "@/components/scroll-to-top";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.chillin.website";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://chillindk.vercel.app";
 const siteDescription = "Brunch, lunch, burgers, pancakes et boissons maison chez Chill'in, café chaleureux au 14 rue Thiers au cœur de Dunkerque.";
 
 const sans = DM_Sans({ subsets: ["latin"], variable: "--font-sans" });
