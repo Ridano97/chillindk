@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
+
+export const metadata: Metadata = { title: "Carte & Menu Brunch", description: "Consultez la carte Chill'in à Dunkerque : formules brunch, lunch salé, burgers, pancakes, douceurs, cafés et boissons.", alternates: { canonical: "/carte" } };
 
 const universes = [
   ["Formules brunch", "Pour prendre le temps dès le matin.", "/brunchs", "/media/DSC02256.jpg"],

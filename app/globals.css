@@ -127,6 +127,7 @@ body { margin: 0; background: #0e0c0b; color: #f2eadf; font-family: var(--font-s
 .menu-page-body { padding: 5rem 1rem; background: radial-gradient(circle at top, #211813 0, #0e0c0b 45rem); }
 .menu-page-body::before { content: ""; display: block; width: min(70vw, 700px); height: 1px; margin: -2.5rem auto 4rem; background: linear-gradient(90deg, transparent, #b8784266, transparent); }
 .menu-sheet { display: grid; gap: 0; overflow: hidden; border: 1px solid #b8784235; border-radius: 1rem; background: linear-gradient(145deg, #1d1511, #120e0c); box-shadow: 0 30px 80px #0007, inset 0 1px #ffffff08; }
+.menu-sheet-text-only { grid-template-columns: 1fr !important; }
 .menu-line h3 { font-size: .75rem; font-weight: 900; letter-spacing: .055em; text-transform: uppercase; }
 .menu-line strong { flex: none; color: #d09867; font-family: var(--font-display), serif; font-size: 1rem; font-weight: 500; }
 .menu-line p { margin-top: .4rem; max-width: 42rem; color: #f2eadf80; font-size: .78rem; line-height: 1.55; }
@@ -146,6 +147,7 @@ body { margin: 0; background: #0e0c0b; color: #f2eadf; font-family: var(--font-s
   .reservation-card { flex-direction: row; align-items: center; justify-content: space-between; padding: 2rem 2.5rem; }
 }
 @media (min-width: 1024px) {
+  html { font-size: 14px; }
   .section-dark { padding: 9rem 2rem 2rem; }
   .experience-card { grid-template-columns: 1fr 1.25fr; }
   .video-panel { min-height: 510px; }

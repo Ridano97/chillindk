@@ -22,8 +22,8 @@ function MenuImageCarousel({ images, alt, fit = "cover" }: { images: string[]; a
 
   return <div className="relative min-h-[340px] overflow-hidden rounded-xl bg-night sm:min-h-[470px]">
     {fit === "contain" && <Image src={currentImage} alt="" fill className="scale-110 object-cover opacity-30 blur-2xl" />}
-    <AnimatePresence mode="wait">
-      <motion.div key={currentImage} className="absolute inset-0" initial={{ opacity: 0, scale: 1.025 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: .8 }}>
+    <AnimatePresence initial={false}>
+      <motion.div key={currentImage} className="absolute inset-0" initial={{ opacity: 0, x: "14%" }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: "-14%" }} transition={{ duration: .75, ease: [0.22, 1, 0.36, 1] }}>
         <Image src={currentImage} alt={alt} fill className={fit === "contain" ? "object-contain" : "object-cover"} />
       </motion.div>
     </AnimatePresence>
@@ -44,9 +44,9 @@ export function MenuPage({ eyebrow, title, intro, hero, sections }: { eyebrow: s
     </section>
     <section className="menu-page-body">
       <div className="mx-auto max-w-[1200px] space-y-10">
-        {sections.map((section, sectionIndex) => <Reveal key={section.title}><article className={`menu-sheet ${sectionIndex % 2 ? 'menu-sheet-reverse' : ''}`}>
+        {sections.map((section, sectionIndex) => <Reveal key={section.title}><article className={`menu-sheet ${sectionIndex % 2 ? 'menu-sheet-reverse' : ''} ${section.image || section.images?.length ? '' : 'menu-sheet-text-only'}`}>
           {(section.images?.length || section.image) && <MenuImageCarousel images={section.images ?? [section.image!]} alt={section.title} fit={section.imageFit} />}
-          <div className="p-6 sm:p-10 lg:p-12"><h2 className="signature text-4xl text-copper sm:text-6xl">{section.title}</h2><div className="mt-8 space-y-6">{section.items.map(item => <div key={item.name} className="menu-line"><div className="flex items-baseline gap-3"><h3>{item.name}</h3><span className="menu-dots" /><strong>{item.price}</strong></div>{item.description && <p>{item.description}</p>}</div>)}</div>{section.note && <p className="mt-8 border-t border-copper/20 pt-5 text-xs italic text-ivory/45">{section.note}</p>}</div>
+          <div className="p-6 sm:p-10 lg:p-12"><h2 className="signature text-4xl text-copper sm:text-6xl">{section.title}</h2><div className="mt-8 space-y-6">{section.items.map(item => <div key={item.name} className="menu-line"><div className="flex items-baseline gap-3"><h3>{item.name}</h3>{item.price && <><span className="menu-dots" /><strong>{item.price}</strong></>}</div>{item.description && <p>{item.description}</p>}</div>)}</div>{section.note && <p className="mt-8 border-t border-copper/20 pt-5 text-xs italic text-ivory/45">{section.note}</p>}</div>
         </article></Reveal>)}
       </div>
     </section>

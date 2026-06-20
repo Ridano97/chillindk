@@ -198,7 +198,7 @@ export function DarkHomePage({ theme = "dark", onThemeChange }: DarkHomePageProp
             <a className="social-card" href="https://www.facebook.com/profile.php?id=61584187581630&locale=fr_FR" target="_blank" rel="noreferrer"><Facebook /><span>Facebook</span><strong>Chill&apos;in DK</strong></a>
             <a className="social-card" href="tel:"><Phone /><span>Téléphone</span><strong>À renseigner</strong></a>
           </div>
-          <div className="mt-12 flex flex-col gap-4 text-xs text-ivory/30 sm:flex-row sm:items-center sm:justify-between lg:text-sm"><div className="flex items-center gap-4"><a href="#accueil" className="block h-10 w-32 text-ivory" aria-label="Chill'in DK - Retour en haut"><BrandLogo className="size-full" /></a><span>© {new Date().getFullYear()}</span></div><p>RIO DIGITAL LAB</p></div>
+          <div className="mt-12 flex items-center justify-between gap-3 text-[10px] text-ivory/30 sm:text-xs lg:text-sm"><div className="flex min-w-0 items-center gap-2 sm:gap-4"><a href="#accueil" className="block h-8 w-24 shrink-0 text-ivory sm:h-10 sm:w-32" aria-label="Chill'in DK - Retour en haut"><BrandLogo className="size-full" /></a><span className="whitespace-nowrap">© {new Date().getFullYear()}</span></div><p className="shrink-0 text-right">RIO DIGITAL LAB</p></div>
         </div>
       </footer>
     </main>
