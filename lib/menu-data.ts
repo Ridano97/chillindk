@@ -1,13 +1,12 @@
 export type MenuItem = { name: string; price: string; description?: string };
-export type MenuSection = { title: string; image?: string; items: MenuItem[]; note?: string };
+export type MenuSection = { title: string; image?: string; images?: string[]; imageFit?: "cover" | "contain"; items: MenuItem[]; note?: string };
 
 export const brunchSections: MenuSection[] = [{
   title: "Formules Brunch",
-  image: "/media/DSC02256.jpg",
+  images: ["/media/brunchmarocain.jpg", "/media/DSC02237.jpg", "/media/brunchmarocain2.jpg"],
   items: [
     { name: "Arabic", price: "11,90 €", description: "Thé à la menthe ou café, msemen, œuf, fromage, olives, charcuterie, huile d'olive, harissa et jus d'orange fraîchement pressé." },
     { name: "French Morning", price: "8,00 €", description: "Tartine, croissant, fromage, chocolat chaud, café ou thé." },
-    { name: "English Classic", price: "11,50 €", description: "Boisson chaude, œufs brouillés, bacon, saucisse, haricots blancs à la tomate et toast." },
     { name: "Turkish Touch", price: "10,90 €", description: "Yaourt turc à l'ail et au persil, œuf au plat et sauce rouge légèrement relevée." },
     { name: "American Dream", price: "12,50 €", description: "Café ou cappuccino, jus d'orange, pancakes ou gaufre, sirop d'érable, œufs brouillés et charcuterie." },
     { name: "Nordic Fresh", price: "13,90 €", description: "Gaufre, saumon fumé, avocat ou fromage frais, ciboulette et œuf." },
@@ -19,6 +18,7 @@ export const brunchSections: MenuSection[] = [{
 export const burgerSections: MenuSection[] = [{
   title: "Burgers",
   image: "/media/IMG_4609.JPG",
+  imageFit: "contain",
   items: [
     { name: "Burger Beef", price: "7,50 €", description: "Pain burger, steak, cheddar et sauce maison." },
     { name: "Le Double", price: "8,00 €", description: "Double steak haché, cheddar et sauce maison." },
@@ -33,7 +33,7 @@ export const burgerSections: MenuSection[] = [{
 
 export const savorySections: MenuSection[] = [{
   title: "Salé · Brunch & Lunch",
-  image: "/media/DSC02168.jpg",
+  images: ["/media/DSC02168.jpg", "/media/saumon.jpg", "/media/gauffrechicken.jpg"],
   items: [
     { name: "Pain Muffin Bénédicte", price: "10,50 €", description: "Pain muffin, avocat, œuf poché, bacon ou saumon, sauce bénédicte." },
     { name: "Croissant Bénédicte", price: "10,50 €", description: "Croissant garni de jambon, avocat, œuf poché et sauce bénédicte." },
@@ -51,7 +51,7 @@ export const savorySections: MenuSection[] = [{
 export const sweetSections: MenuSection[] = [
   {
     title: "Pancakes",
-    image: "/media/DSC02186.jpg",
+    image: "/media/pancake.jpg",
     items: [
       { name: "Pistache Signature", price: "7,50 €", description: "Crème pistache, éclats de pistache et coulis de framboise." },
       { name: "Rouge Velours", price: "6,50 €", description: "Coulis de fruits rouges, fruits frais et chantilly." },
@@ -62,7 +62,7 @@ export const sweetSections: MenuSection[] = [
   },
   {
     title: "Pain Perdu",
-    image: "/media/DSC02264.jpg",
+    images: ["/media/painperdu.jpg", "/media/painperdu2.jpg", "/media/painperdu3.jpg"],
     items: [
       { name: "Pistache", price: "6,00 €", description: "Coulis et éclats de pistache, boule de glace." },
       { name: "Framboise", price: "6,00 €", description: "Coulis de framboise, framboises et boule de glace." },

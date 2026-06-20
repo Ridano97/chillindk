@@ -3,9 +3,34 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import type { MenuSection } from "@/lib/menu-data";
 import { Reveal } from "./reveal";
 import { SiteHeader } from "./site-header";
+
+function MenuImageCarousel({ images, alt, fit = "cover" }: { images: string[]; alt: string; fit?: "cover" | "contain" }) {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    if (images.length < 2) return;
+    const timer = window.setInterval(() => setActive((current) => (current + 1) % images.length), 4200);
+    return () => window.clearInterval(timer);
+  }, [images.length]);
+
+  const currentImage = images[active];
+
+  return <div className="relative min-h-[340px] overflow-hidden rounded-xl bg-night sm:min-h-[470px]">
+    {fit === "contain" && <Image src={currentImage} alt="" fill className="scale-110 object-cover opacity-30 blur-2xl" />}
+    <AnimatePresence mode="wait">
+      <motion.div key={currentImage} className="absolute inset-0" initial={{ opacity: 0, scale: 1.025 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: .8 }}>
+        <Image src={currentImage} alt={alt} fill className={fit === "contain" ? "object-contain" : "object-cover"} />
+      </motion.div>
+    </AnimatePresence>
+    <div className="absolute inset-0 bg-gradient-to-t from-night/50 to-transparent" />
+    {images.length > 1 && <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-2">{images.map((image, index) => <button key={image} onClick={() => setActive(index)} aria-label={`Afficher la photo ${index + 1}`} className={`h-1.5 rounded-full transition-all ${active === index ? "w-8 bg-copper" : "w-1.5 bg-ivory/50"}`} />)}</div>}
+  </div>;
+}
 
 export function MenuPage({ eyebrow, title, intro, hero, sections }: { eyebrow: string; title: string; intro: string; hero: string; sections: MenuSection[] }) {
   return <main className="min-h-screen bg-night text-ivory">
@@ -20,7 +45,7 @@ export function MenuPage({ eyebrow, title, intro, hero, sections }: { eyebrow: s
     <section className="menu-page-body">
       <div className="mx-auto max-w-[1200px] space-y-10">
         {sections.map((section, sectionIndex) => <Reveal key={section.title}><article className={`menu-sheet ${sectionIndex % 2 ? 'menu-sheet-reverse' : ''}`}>
-          {section.image && <div className="relative min-h-[340px] overflow-hidden rounded-xl sm:min-h-[470px]"><Image src={section.image} alt={section.title} fill className="object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-night/50 to-transparent" /></div>}
+          {(section.images?.length || section.image) && <MenuImageCarousel images={section.images ?? [section.image!]} alt={section.title} fit={section.imageFit} />}
           <div className="p-6 sm:p-10 lg:p-12"><h2 className="signature text-4xl text-copper sm:text-6xl">{section.title}</h2><div className="mt-8 space-y-6">{section.items.map(item => <div key={item.name} className="menu-line"><div className="flex items-baseline gap-3"><h3>{item.name}</h3><span className="menu-dots" /><strong>{item.price}</strong></div>{item.description && <p>{item.description}</p>}</div>)}</div>{section.note && <p className="mt-8 border-t border-copper/20 pt-5 text-xs italic text-ivory/45">{section.note}</p>}</div>
         </article></Reveal>)}
       </div>

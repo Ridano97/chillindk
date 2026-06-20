@@ -68,6 +68,13 @@ export function StreamHero() {
   return (
     <>
       <Script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.15/dist/hls.min.js" strategy="afterInteractive" onReady={setupStream} />
+      <svg className="stream-clip-defs" aria-hidden="true">
+        <defs>
+          <clipPath id="stream-feature-arch" clipPathUnits="objectBoundingBox">
+            <path d="M .025 1 Q 0 1 0 .975 V .24 C 0 .108 .224 0 .5 0 C .776 0 1 .108 1 .24 V .975 Q 1 1 .975 1 Z" />
+          </clipPath>
+        </defs>
+      </svg>
       <motion.div
         initial={{ opacity: 0, x: 90 }}
         whileInView={{ opacity: 1, x: 0 }}
