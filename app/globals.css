@@ -43,7 +43,7 @@ body { margin: 0; background: #0e0c0b; color: #f2eadf; font-family: var(--font-s
 .theme-light .social-card { background: linear-gradient(145deg, #fffdf9, #eee3d5); }
 .theme-light .social-card span { color: #211b17; }
 .theme-light .social-card strong { color: #211b1780; }
-.google-review-cta { display: grid; max-width: 960px; overflow: hidden; margin: 3.5rem auto 0; border: 1px solid #b878423d; border-radius: 1rem; background: linear-gradient(145deg, #1b1512, #120f0d); box-shadow: 0 24px 70px #0005; }
+.google-review-cta { display: grid; max-width: 800px; overflow: hidden; margin: 3rem auto 0; border: 1px solid #b878423d; border-radius: 1rem; background: linear-gradient(145deg, #1b1512, #120f0d); box-shadow: 0 24px 70px #0005; }
 .theme-light .google-review-cta { background: linear-gradient(145deg, #fffdf9, #eee3d5); box-shadow: 0 24px 70px #6b422020; }
 .slow-gallery { overflow: hidden; }
 .slow-gallery-track { display: flex; width: max-content; animation: slow-gallery-scroll 58s linear infinite; will-change: transform; }
@@ -68,7 +68,7 @@ body { margin: 0; background: #0e0c0b; color: #f2eadf; font-family: var(--font-s
 .stream-orbit { display: none; }
 .stream-orbit-one { inset: -3% -7% 8% 4%; transform: rotate(8deg); }
 .stream-orbit-two { inset: 8% 3% -4% -8%; transform: rotate(-7deg); }
-.stream-feature-wrap { position: relative; width: min(100%, 760px); margin-inline: auto; overflow: hidden; border: 1px solid #b2744066; background: #17120f; box-shadow: 0 35px 100px #0009; clip-path: url(#stream-feature-arch); }
+.stream-feature-wrap { position: relative; width: min(100%, 560px); margin-inline: auto; overflow: hidden; border: 1px solid #b2744066; background: #17120f; box-shadow: 0 35px 100px #0009; clip-path: url(#stream-feature-arch); }
 .stream-feature { position: relative; aspect-ratio: 9 / 14; overflow: hidden; }
 .stream-feature video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .stream-feature-shade { position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(to top, #0e0c0b80, transparent 35%); }
@@ -147,7 +147,7 @@ body { margin: 0; background: #0e0c0b; color: #f2eadf; font-family: var(--font-s
   .reservation-card { flex-direction: row; align-items: center; justify-content: space-between; padding: 2rem 2.5rem; }
 }
 @media (min-width: 1024px) {
-  body { zoom: .78; }
+  body { zoom: .68; }
   .section-dark { padding: 9rem 2rem 2rem; }
   .experience-card { grid-template-columns: 1fr 1.25fr; }
   .video-panel { min-height: 510px; }

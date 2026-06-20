@@ -98,6 +98,7 @@ export const sweetSections: MenuSection[] = [
   },
   {
     title: "Desserts",
+    image: "/media/cheesecake.jpg",
     items: [{ name: "Gâteaux du jour", price: "Prix affiché au comptoir" }],
   },
 ];

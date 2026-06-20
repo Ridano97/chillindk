@@ -163,12 +163,12 @@ export function DarkHomePage({ theme = "dark", onThemeChange }: DarkHomePageProp
         </div>
       </section>
 
-      <section id="avis" className="border-y border-copper/20 bg-panel px-5 py-20 sm:px-10 lg:py-28" onMouseEnter={() => setReviewsPaused(true)} onMouseLeave={() => setReviewsPaused(false)} onFocusCapture={() => setReviewsPaused(true)} onBlurCapture={() => setReviewsPaused(false)}>
-        <div className="mx-auto max-w-5xl text-center">
+      <section id="avis" className="border-y border-copper/20 bg-panel px-5 py-20 sm:px-10 lg:py-20" onMouseEnter={() => setReviewsPaused(true)} onMouseLeave={() => setReviewsPaused(false)} onFocusCapture={() => setReviewsPaused(true)} onBlurCapture={() => setReviewsPaused(false)}>
+        <div className="mx-auto max-w-4xl text-center">
           <div className="mb-6 flex justify-center gap-1 text-copper">{Array.from({ length: 5 }).map((_, i) => <Star key={i} size={16} fill="currentColor" />)}</div>
           <motion.div key={review} initial={{ opacity: 0, x: 36 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: .55 }}>
-            <blockquote className="font-display text-3xl sm:text-5xl lg:text-6xl">“{reviews[review]}”</blockquote>
-            <p className="mt-6 text-xs font-bold uppercase tracking-[.16em] text-ivory/55 lg:text-sm">5/5 sur Google</p>
+            <blockquote className="font-display text-3xl sm:text-5xl">“{reviews[review]}”</blockquote>
+            <p className="mt-6 text-xs font-bold uppercase tracking-[.16em] text-ivory/55">5/5 sur Google</p>
           </motion.div>
           <div className="mt-7 flex justify-center gap-2">{reviews.map((_, i) => <button key={i} onClick={() => setReview(i)} aria-label={`Avis ${i + 1}`} className={`h-1.5 rounded-full transition-all ${review === i ? 'w-8 bg-copper' : 'w-1.5 bg-ivory/20'}`} />)}</div>
           <a href={googleReviewsUrl} target="_blank" rel="noreferrer" className="google-review-cta group">
