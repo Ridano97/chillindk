@@ -1,10 +1,11 @@
 "use client";
 
 import { DarkHomePage } from "@/components/home-page";
-import { useEffect, useState } from "react";
+import { useTheme } from "@/components/theme-provider";
+import { useEffect } from "react";
 
 export default function Page() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     window.history.scrollRestoration = "manual";
@@ -20,5 +21,5 @@ export default function Page() {
     };
   }, []);
 
-  return <DarkHomePage theme={theme} onThemeChange={() => setTheme((current) => current === "dark" ? "light" : "dark")} />;
+  return <DarkHomePage theme={theme} onThemeChange={toggleTheme} />;
 }

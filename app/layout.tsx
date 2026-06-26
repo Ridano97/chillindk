@@ -3,6 +3,7 @@ import { DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://chillindk.vercel.app";
 const siteDescription = "Brunch, lunch, burgers, pancakes et boissons maison chez Chill'in, café chaleureux au 14 rue Thiers au cœur de Dunkerque.";
@@ -74,7 +75,7 @@ const restaurantJsonLd = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr" className={`${sans.variable} ${display.variable}`}>
-      <body><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantJsonLd) }} /><ScrollProgress />{children}<ScrollToTop /></body>
+      <body><ThemeProvider><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantJsonLd) }} /><ScrollProgress />{children}<ScrollToTop /></ThemeProvider></body>
     </html>
   );
 }

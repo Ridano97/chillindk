@@ -25,6 +25,8 @@ body { margin: 0; background: #0e0c0b; color: #f2eadf; font-family: var(--font-s
   --color-card: #fffaf3;
   --color-ivory: #211b17;
   --color-copper: #a95f2f;
+  background: #f7f1e8;
+  color: #211b17;
   color-scheme: light;
 }
 .theme-light .nav-link { color: #211b17a8; }
